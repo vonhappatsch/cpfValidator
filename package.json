@@ -1,0 +1,15 @@
+{
+  "name": "cpfvalidator",
+  "version": "1.0.0",
+  "description": "Biblioteca JS para validar CPF",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jéssica Happatsch",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}
