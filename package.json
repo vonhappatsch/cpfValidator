@@ -4,15 +4,15 @@
   "description": "Biblioteca JS para validar CPF",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha",
-    "lint": "./node_modules/eslint/bin/eslint.js ."
+    "test": "mocha",
+    "lint": "eslint"
   },
   "author": "Jéssica Happatsch",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.1.4",
-    "eslint": "^5.16.0"
+    "eslint": "^5.16.0",
+    "mocha": "^6.1.4"
   },
   "repository": {
     "type": "git",

@@ -1,20 +1,15 @@
 const mods  = (multipliedCPf) => multipliedCPf % 11 % 10
 
 const cleaningCpf = (cpf) => {
-  // aceita cpf tanto em numero quanto em string - se for numero passa pra string e limpa de outros caracteres a string
   let cleanCpf = cpf
-    // para termos apenas dígitos e nos livrarmos de outros caracteres
     .toString()
     .replace(/\D+/g, '')
-    // para transformar a string em array
     .split('')
-    // para transformar os caracteres em números
     .map(Number);
   return cleanCpf;
 }
 
 const multiplyCpfOne = (cleanCpf) => {
-  // para multiplicar todos os digitos de acordo com o algoritmo e encontrar o primeiro digito para validar
   let multipliedOne = cleanCpf
     .map((digit, i) => {
       let multiplier = 10 - i;
@@ -25,7 +20,6 @@ const multiplyCpfOne = (cleanCpf) => {
 }
 
 const multiplyCpfTwo = (cleanCpf) => {
-  // para multiplicar todos os digitos de acordo com o algoritmo e encontrar o segundo digito para validar
   let multipliedTwo = cleanCpf
     .map((digit, i) => {
       let multiplier = 11 - i;
@@ -36,7 +30,6 @@ const multiplyCpfTwo = (cleanCpf) => {
 }
 
 const validDigitOne = (multipliedOne) => {
-  // para validar o primeiro digito de acordo com o algoritmo
   let digitOne = mods(multipliedOne.slice(0, 9).reduce((accum, curr) => accum + curr) * 10);
   return digitOne;
 }
@@ -46,15 +39,82 @@ const validDigitTwo = (multipliedTwo) => {
   return digitTwo;
 }
 
-function validateCpf2(cpf) {
-  // aqui coloca o if pros numeros iguais
+// const equalNumbers = (cleaned) => {
+//   let equalNumbersFilter = cleaned.filter(function(elem, pos, arr) {
+//     return arr.indexOf(elem) == pos;
+//   });
+//   let checkEqualNumbers = equalNumbersFilter.length;
+//   return checkEqualNumbers;
+// }
+
+const equalNumbers = cleaned => cleaned.every(elem => elem === cleaned[0]);
+
+function cpfValidator(cpf) {
+  // if (cpf === "11111111111" || cpf === 11111111111 ||
+  // cpf === "22222222222" || cpf === 22222222222 ||
+  // cpf === "33333333333" || cpf === 33333333333 ||
+  // cpf === "44444444444" || cpf === 44444444444 ||
+  // cpf === "55555555555" || cpf === 55555555555 ||
+  // cpf === "66666666666" || cpf === 66666666666 ||
+  // cpf === "77777777777" || cpf === 77777777777 ||
+  // cpf === "88888888888" || cpf === 88888888888 ||
+  // cpf === "99999999999" || cpf === 99999999999) {
+  //   return false;
+  // } else {
   const cleaned = cleaningCpf(cpf);
-  const cpfMultOne = multiplyCpfOne(cleaned);
-  const cpfMultTwo = multiplyCpfTwo(cleaned);
-  const validDigits = [validDigitOne(cpfMultOne), validDigitTwo(cpfMultTwo)];
-  if (validDigits[0] === cleaned[9] & validDigits[1] === cleaned[10]) {
-    return true;
-  } else {
-    return false;
+  const isUniform = (cleaned) => {
+    const base = cleaned[0];
+    const equal = cleaned.every(element => element === base);
+    if (equal === true) {
+      return false;
+    }
   }
+  // if (isUniform) {
+  //   return false;
+  // } else {
+    const cpfMultOne = multiplyCpfOne(cleaned);
+    const cpfMultTwo = multiplyCpfTwo(cleaned);
+    const validDigits = [validDigitOne(cpfMultOne), validDigitTwo(cpfMultTwo)];
+    if (validDigits[0] === cleaned[9] & validDigits[1] === cleaned[10]) {
+      return true;
+    } else {
+      return false;
+    }
+  //}
+  // if (cleaned === [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] ||
+  // cleaned === [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] ||
+  // cleaned === [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] ||
+  // cleaned === [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3] || 
+  // cleaned === [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4] ||
+  // cleaned === [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5] ||
+  // cleaned === [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6] ||
+  // cleaned === [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7] ||
+  // cleaned === [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8] ||
+  // cleaned === [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]) {
+  //   console.log(cleaned);
+  //   return false;
+  // } 
+
+  // aqui eu faço um filter que passe pela array e filtre e pegue o que for igual aí se o tamanho dessa array for igual a quantidade de numeros num cpf entao retorna falso
+
+  // const cpfMultOne = multiplyCpfOne(cleaned);
+  // const cpfMultTwo = multiplyCpfTwo(cleaned);
+  // const validDigits = [validDigitOne(cpfMultOne), validDigitTwo(cpfMultTwo)];
+  // if (validDigits[0] === cleaned[9] & validDigits[1] === cleaned[10]) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
 }
+
+module.exports.cpfValidator = cpfValidator;
+
+// console.log(cpfValidator(13385420792));
+// console.log(cpfValidator("13385420792"));
+// console.log(cpfValidator("133.854.207-92"));
+console.log(cpfValidator(13385429782));
+console.log(cpfValidator("13385429782"));
+console.log(cpfValidator("133.854.297-82"));
+console.log(cpfValidator("11111111111"));
+console.log(cpfValidator("111.111.111-11"));
+console.log(cpfValidator(11111111111));
