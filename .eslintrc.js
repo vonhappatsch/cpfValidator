@@ -19,7 +19,7 @@ module.exports = {
         ],
         "linebreak-style": [
             "error",
-            "unix"
+            "windows"
         ],
         "quotes": [
             "error",
@@ -31,7 +31,7 @@ module.exports = {
         ],
         "id-length": [
           "error",
-          { "min": 4 }
+          { "min": 2 }
         ],
         "camelcase": [
           "error",
@@ -59,7 +59,6 @@ module.exports = {
         ],
         "key-spacing": [
           "error", 
-          { "beforeColon": true },
           { "afterColon": true }
         ],
         "no-multi-spaces": [
