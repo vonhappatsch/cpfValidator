@@ -48,4 +48,4 @@ describe ('index test', () => {
             expect(cpfValidator.cpfValidator("111.111.111-11")).to.equal(false);
         });
     });
-})
+});

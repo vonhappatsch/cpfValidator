@@ -1,5 +1,4 @@
 const mods  = (multipliedCPf) => multipliedCPf % 11 % 10
-
 const cleaningCpf = (cpf) => {
   let cleanCpf = cpf
     .toString()
@@ -63,13 +62,3 @@ function cpfValidator(cpf) {
 }
 
 module.exports.cpfValidator = cpfValidator;
-
-// console.log(cpfValidator(13385420792));
-// console.log(cpfValidator("13385420792"));
-// console.log(cpfValidator("133.854.207-92"));
-console.log(cpfValidator(13385420792));
-console.log(cpfValidator("13385420792"));
-console.log(cpfValidator("133.854.297-82"));
-console.log(cpfValidator("11111111111"));
-console.log(cpfValidator("111.111.111-11"));
-console.log(cpfValidator(11111111111));
