@@ -9,15 +9,13 @@
   },
   "author": "Jéssica Happatsch",
   "license": "ISC",
-  "dependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.1.4"
-  },
   "repository": {
     "type": "git",
     "url": "github.com/vonhappatsch/cpfValidator"
   },
   "devDependencies": {
-    "eslint": "^5.16.0"
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "mocha": "^6.1.4"
   }
 }
