@@ -15,7 +15,7 @@ module.exports = {
     "rules": {
         "indent": [
             "error",
-            4
+            2
         ],
         "linebreak-style": [
             "error",
@@ -23,11 +23,86 @@ module.exports = {
         ],
         "quotes": [
             "error",
-            "double"
+            "single"
         ],
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "id-length": [
+          "error",
+          { "min": 4 }
+        ],
+        "camelcase": [
+          "error",
+          { "properties": "always" }
+        ],
+        "keyword-spacing": [
+          "error",
+          { "after": true }
+        ],
+        "space-infix-ops": [
+          "error", 
+          {"int32Hint": false}
+        ],
+        "comma-spacing": [
+          "error", 
+          { "before": false, "after": true }
+        ],
+        "space-before-blocks": [
+          "error",
+          "always"
+        ],
+        "spaced-comment": [
+          "error",
+          "always"
+        ],
+        "key-spacing": [
+          "error", 
+          { "beforeColon": true },
+          { "afterColon": true }
+        ],
+        "no-multi-spaces": [
+          "error"
+        ],
+        "space-in-parens": [
+          "error", 
+          "never"
+        ],
+        "space-before-function-paren": [
+          "error", 
+          "never"
+        ],
+        "func-call-spacing": [
+          "error", 
+          "never"
+        ],
+        "no-multiple-empty-lines": [
+          "error", 
+          { "max": 0 }
+        ],
+        "allowSingleLineBlocks": [
+          "error",
+          "never"
+        ],
+        "quotes": [
+          "error", 
+          "single"
+        ],
+        "no-floating-decimal": [
+          "error"
+        ],
+        "object-property-newline": [
+          "error"
+        ],
+        "brace-style": [
+          "error"
+        ],
+        "eqeqeq": [
+          "error"
+        ],
+        "no-array-constructor": [
+          "error"
+        ],
     }
 };

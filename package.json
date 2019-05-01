@@ -4,7 +4,7 @@
   "description": "Biblioteca JS para validar CPF",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/nyc/bin/nyc.js ./node_modules/mocha/bin/mocha",
+    "test": "./node_modules/mocha/bin/mocha",
     "lint": "./node_modules/eslint/bin/eslint.js ."
   },
   "author": "Jéssica Happatsch",
@@ -16,6 +16,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/vonhappatsch/cpfValidator.git"
+    "url": "github.com/vonhappatsch/cpfValidator"
   }
 }
