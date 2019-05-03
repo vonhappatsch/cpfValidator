@@ -43,6 +43,8 @@ function cpfValidator(cpf) {
   cpf === '88888888888' || cpf === 88888888888 ||
   cpf === '99999999999' || cpf === 99999999999) {
     return false;
+  } else if (cpf === null || cpf === '') {
+    return false;
   } else {
     const cleaned = cleaningCpf(cpf);
     const cpfMultOne = multiplyCpfOne(cleaned);
