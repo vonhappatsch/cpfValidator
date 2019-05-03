@@ -1,5 +1,5 @@
 {
-  "name": "cpfvalidator",
+  "name": "cpf-validator-jj",
   "version": "1.0.0",
   "description": "Biblioteca JS para validar CPF",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "github.com/vonhappatsch/cpfValidator"
+    "url": "https://github.com/vonhappatsch/cpfValidator"
   },
   "devDependencies": {
     "chai": "^4.2.0",

@@ -52,5 +52,5 @@ describe('index test', () => {
     it('should return false', () => {
       expect(cpfValidator.cpfValidator('')).to.equal(false);
     });
-  })
+  });
 });
