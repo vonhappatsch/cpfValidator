@@ -48,4 +48,9 @@ describe('index test', () => {
       expect(cpfValidator.cpfValidator('111.111.111-11')).to.equal(false);
     });
   });
+  describe('empty string', () => {
+    it('should return false', () => {
+      expect(cpfValidator.cpfValidator('')).to.equal(false);
+    });
+  })
 });
