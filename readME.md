@@ -27,16 +27,11 @@ $  npm install cpf-validator-jj
 
 ## roadmap oficial do projeto
 
-#### versão 3.0.0 (sem previsão, aceita-se contribuições)
-- implementação da conversão para bilhões e trilhões;
-- README translated to english;
-- conversão de centavos.
-
-#### versão 2.0.0 (previsão outubro/2018)
-- correção de bugs de espaçamento em números acima de 100000;
-- implementação da opção "letras maiúsculas ou minúsculas";
-- implementação da opção de incluir moeda na conversão.
+#### versão 2.0.0 (sem previsão - aceita-se contribuições)
+- correção de eventuais bugs;
+- aceitar caracteres especiais como ponto e hífen;
+- melhorar experiência com rapidez e mensagens de resultados.
 
 #### versão 1.0.0 (released)
-- funcionalidades: conversão de números de 0 a 999999999.
-- conversão para texto em português brasileiro, com letras minúsculas.
+- funcionalidades: validação do CPF fornecido.
+- valida o número de CPF fornecido, sendo uma série de 11 dígitos ou uma string sem caracteres especiais contendo 11 números.
