@@ -60,14 +60,3 @@ function cpfValidator(cpf) {
   }
 }
 module.exports.cpfValidator = cpfValidator;
-
-console.log(cpfValidator("13385420792")); // true
-console.log(cpfValidator("133.854.207-92")); // true
-console.log(cpfValidator(13385420792)); // true
-console.log(cpfValidator(1338542079)); // false
-console.log(cpfValidator(133854207923)); // false
-console.log(cpfValidator(11111111111)); // false
-console.log(cpfValidator(00000000000)); // false
-console.log(cpfValidator(99999999999)); // false
-console.log(cpfValidator("333.333.333-33")); // false
-console.log(cpfValidator("133.854.20792")); // true
