@@ -25,13 +25,13 @@ $  npm install cpf-validator-jj
 
 ```
 
-## roadmap oficial do projeto
+## Roadmap oficial do projeto
 
 #### versão 2.1.0 (sem previsão - aceita-se contribuições)
 - correção de eventuais bugs;
 - melhorar experiência com rapidez e mensagens de resultados.
 
-### versão 2.0.0 (released)
+#### versão 2.0.0 (released)
 - aceita string com caracteres especiais como input e realiza a validação;
 - correção da validação de CPF com números iguais (e também caracteres especiais).
 
