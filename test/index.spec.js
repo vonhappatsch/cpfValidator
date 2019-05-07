@@ -53,4 +53,14 @@ describe('index test', () => {
       expect(cpfValidator.cpfValidator('')).to.equal(false);
     });
   });
+  describe('input with less than 11 characters is invalid', () => {
+    it('should return false', () => {
+      expect(cpfValidator.cpfValidator(1338652079)).to.equal(false);
+    });
+  });
+  describe('input of over 11 characters is valid', () => {
+    it('should return false', () => {
+      expect(cpfValidator.cpfValidator('133854207923')).to.equal(false);
+    })
+  })
 });
