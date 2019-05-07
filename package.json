@@ -4,7 +4,7 @@
   "description": "Biblioteca JS para validar CPF",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/nyc/bin/nyc.js ./node_modules/mocha/bin/mocha",
+    "test": "nyc mocha",
     "lint": "eslint"
   },
   "author": "Jéssica Happatsch",

@@ -14,8 +14,8 @@ describe('index test', () => {
     });
   });
   describe('string with other characters', () => {
-    it('should return false', () => {
-      expect(cpfValidator.cpfValidator('133.854.207-92')).to.equal(false);
+    it('should return true', () => {
+      expect(cpfValidator.cpfValidator('133.854.207-92')).to.equal(true);
     });
   });
   describe('invalid cpf in numbers', () => {
