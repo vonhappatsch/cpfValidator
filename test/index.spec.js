@@ -58,7 +58,7 @@ describe('index test', () => {
       expect(cpfValidator.cpfValidator(1338652079)).to.equal(false);
     });
   });
-  describe('input of over 11 characters is valid', () => {
+  describe('input of over 11 characters is invalid', () => {
     it('should return false', () => {
       expect(cpfValidator.cpfValidator('133854207923')).to.equal(false);
     })

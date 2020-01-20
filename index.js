@@ -1,62 +1,49 @@
 const mods = (multipliedCPf) => multipliedCPf % 11 % 10;
+
 const cleaningCpf = (cpf) => {
-  let cleanCpf = cpf
-    .toString()
-    .replace(/\D+/g, '')
-    .split('')
-    .map(Number)
-  return cleanCpf;
+    let cleanCpf = cpf
+        .toString()
+        .replace(/\D+/g, '')
+        .split('')
+        .map(Number)
+    return cleanCpf;
 };
-const multiplyCpfOne = (cleanCpf) => {
-  let multipliedOne = cleanCpf.map((digit, index) => {
-    let multiplier = 10 - index;
-    digit = digit * multiplier;
-    return digit;
-  });
-  return multipliedOne;
+
+const multiplyingCpf = (cleanCpf, multiplier) => {
+    let multiplied = cleanCpf.map((digit, index) => {
+        let preparedMultiplier = multiplier - index;
+        digit = digit * preparedMultiplier;
+        return digit;
+    });
+    return multiplied;
 };
-const multiplyCpfTwo = (cleanCpf) => {
-  let multipliedTwo = cleanCpf.map((digit, index) => {
-    let multiplier = 11 - index;
-    digit = digit * multiplier;
-    return digit;
-  });
-  return multipliedTwo;
+
+const validatingDigit = (multiplyingCpf, limitDigit) => {
+    let validDigit = mods(multiplyingCpf.slice(0, limitDigit).reduce((accum, curr) => accum + curr) * 10);
+    return validDigit;
 };
-const validDigitOne = (multipliedOne) => {
-  let digitOne = mods(multipliedOne.slice(0, 9).reduce((accum, curr) => accum + curr) * 10);
-  return digitOne;
-};
-const validDigitTwo = (multipliedTwo) => {
-  let digitTwo = mods(multipliedTwo.slice(0, 10).reduce((accum, curr) => accum + curr) * 10);
-  return digitTwo;
-};
+
 const allEqual = (cleaned) => {
-  let first = cleaned[0];
-  return cleaned.every(function(element) {
-    return element === first;
-  });
-;}
+    let first = cleaned[0];
+    return cleaned.every(function (element) {
+        return element === first;
+    });
+};
+
 function cpfValidator(cpf) {
-  if (cpf === null || cpf === '') {
-    return false;
-  } else {
+    if (cpf === '' || cpf === null) return false;
+    
     const cleaned = cleaningCpf(cpf);
-    const equal = allEqual(cleaned);
-    if (cleaned.length > 11 || cleaned.length < 11) {
-      return false;
-    } else if (equal === true) {
-      return false;
-    } else {
-      const cpfMultOne = multiplyCpfOne(cleaned);
-      const cpfMultTwo = multiplyCpfTwo(cleaned);
-      const validDigits = [validDigitOne(cpfMultOne), validDigitTwo(cpfMultTwo)];
-      if (validDigits[0] === cleaned[9] & validDigits[1] === cleaned[10]) {
-        return true;
-      } else {
+    if (cleaned.length !== 11) {
         return false;
-      }
-    }
-  }
-}
+    } else if (allEqual(cleaned)) {
+        return false;
+    } else {
+        const cpfMultOne = multiplyingCpf(cleaned, 10);
+        const cpfMultTwo = multiplyingCpf(cleaned, 11);
+        const validDigits = [validatingDigit(cpfMultOne, 9), validatingDigit(cpfMultTwo, 10)];
+        return (validDigits[0] === cleaned[9] & validDigits[1] === cleaned[10]) ? true : false;
+    }    
+};
+
 module.exports.cpfValidator = cpfValidator;
